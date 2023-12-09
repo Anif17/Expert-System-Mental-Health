@@ -5,18 +5,170 @@ export default function Service() {
   const questions = [
     {
       id: "q1",
-      text: "Which color do you prefer?",
+      text: "1. Are you feeling upset?",
       options: [
-        { value: "red", label: "Red" },
-        { value: "blue", label: "Blue" },
+        { value: "Yes", label: "Yes" },
+        { value: "No", label: "No" },
       ],
     },
     {
       id: "q2",
-      text: "What is your favorite animal?",
+      text: "2. Are you fear persistant?",
       options: [
-        { value: "dog", label: "Dog" },
-        { value: "cat", label: "Cat" },
+        { value: "Yes", label: "Yes" },
+        { value: "No", label: "No" },
+      ],
+    },
+    {
+      id: "q3",
+      text: "3. Are you always expect something to happen?",
+      options: [
+        { value: "Yes", label: "Yes" },
+        { value: "No", label: "No" },
+      ],
+    },
+    {
+      id: "q4",
+      text: "4. Do you have muscle spasms?",
+      options: [
+        { value: "Yes", label: "Yes" },
+        { value: "No", label: "No" },
+      ],
+    },
+    {
+      id: "q5",
+      text: "5. Do you sometimes have increase in adrenaline secretion?",
+      options: [
+        { value: "Yes", label: "Yes" },
+        { value: "No", label: "No" },
+      ],
+    },
+    {
+      id: "q6",
+      text: "6. Do you afraid of the unknown?",
+      options: [
+        { value: "Yes", label: "Yes" },
+        { value: "No", label: "No" },
+      ],
+    },
+    {
+      id: "q7",
+      text: "7. Do you have hypertension?",
+      options: [
+        { value: "Yes", label: "Yes" },
+        { value: "No", label: "No" },
+      ],
+    },
+    {
+      id: "q8",
+      text: "8. Do you have fear of accumulation of dirt?",
+      options: [
+        { value: "Yes", label: "Yes" },
+        { value: "No", label: "No" },
+      ],
+    },
+    {
+      id: "q9",
+      text: "9. Do you often shut the doors continuosly?",
+      options: [
+        { value: "Yes", label: "Yes" },
+        { value: "No", label: "No" },
+      ],
+    },
+    {
+      id: "q10",
+      text: "10. Do you frequent in making decisions?",
+      options: [
+        { value: "Yes", label: "Yes" },
+        { value: "No", label: "No" },
+      ],
+    },
+    {
+      id: "q11",
+      text: "11. Do you often quiestioning and inspire ideas?",
+      options: [
+        { value: "Yes", label: "Yes" },
+        { value: "No", label: "No" },
+      ],
+    },
+    {
+      id: "q12",
+      text: "12. Do you bathing more than ten times?",
+      options: [
+        { value: "Yes", label: "Yes" },
+        { value: "No", label: "No" },
+      ],
+    },
+    {
+      id: "q13",
+      text: "13. Do you often repeat washing hands?",
+      options: [
+        { value: "Yes", label: "Yes" },
+        { value: "No", label: "No" },
+      ],
+    },
+    {
+      id: "q14",
+      text: "14. Do you always absence on your consciousness?",
+      options: [
+        { value: "Yes", label: "Yes" },
+        { value: "No", label: "No" },
+      ],
+    },
+    {
+      id: "q15",
+      text: "15. Do you have temporary loss of memory?",
+      options: [
+        { value: "Yes", label: "Yes" },
+        { value: "No", label: "No" },
+      ],
+    },
+    {
+      id: "q16",
+      text: "16. Do you have any misaslignment of limbs?",
+      options: [
+        { value: "Yes", label: "Yes" },
+        { value: "No", label: "No" },
+      ],
+    },
+    {
+      id: "q17",
+      text: "17. Do you have any feeling of hatred?",
+      options: [
+        { value: "Yes", label: "Yes" },
+        { value: "No", label: "No" },
+      ],
+    },
+    {
+      id: "q18",
+      text: "18. Do you have proper food balance?",
+      options: [
+        { value: "Yes", label: "Yes" },
+        { value: "No", label: "No" },
+      ],
+    },
+    {
+      id: "q19",
+      text: "19. Do you often losing hope?",
+      options: [
+        { value: "Yes", label: "Yes" },
+        { value: "No", label: "No" },
+      ],
+    },
+    {
+      id: "q20",
+      text: "20. Do you have inactivity of the body?",
+      options: [
+        { value: "Yes", label: "Yes" },
+        { value: "No", label: "No" },
+      ],
+    },
+    {
+      id: "q21",
+      text: "21. Do you have any life pressures?",
+      options: [
+        { value: "Yes", label: "Yes" },
+        { value: "No", label: "No" },
       ],
     },
     // Add more questions as needed
