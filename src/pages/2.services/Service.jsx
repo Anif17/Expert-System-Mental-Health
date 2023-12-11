@@ -5,23 +5,28 @@ export default function Service() {
   const questions = [
     {
       id: "q1",
-      text: "1. Are you feeling upset?",
+      text: "1. Please insert your BMI?",
       options: [
-        { value: "Yes", label: "Yes" },
-        { value: "No", label: "No" },
+        { value: "Normal", label: "18-22.9" },
+        { value: "Overweight", label: " 23-24.9" },
+        { value: "Obese", label: "25-29.9" },
+        { value: "Super Obese", label: "30-34.9" },
+        { value: "Hyper Obese", label: "40 and above" }
       ],
     },
     {
       id: "q2",
-      text: "2. Are you fear persistant?",
+      text: "2. What kind of way do you walk everyday?",
       options: [
-        { value: "Yes", label: "Yes" },
-        { value: "No", label: "No" },
+        { value: "Walk Slow", label: "Walk Slowly" },
+        { value: "Walk Quick", label: "Walk Quickly" },
+        { value: "Run Slow", label: "Run Slowly" },
+        { value: "Run Quick", label: "Run Quickly" }
       ],
     },
     {
       id: "q3",
-      text: "3. Are you always expect something to happen?",
+      text: "3. Do you always have breakfast?",
       options: [
         { value: "Yes", label: "Yes" },
         { value: "No", label: "No" },
@@ -29,7 +34,7 @@ export default function Service() {
     },
     {
       id: "q4",
-      text: "4. Do you have muscle spasms?",
+      text: "4. Do you always have lunch?",
       options: [
         { value: "Yes", label: "Yes" },
         { value: "No", label: "No" },
@@ -37,135 +42,7 @@ export default function Service() {
     },
     {
       id: "q5",
-      text: "5. Do you sometimes have increase in adrenaline secretion?",
-      options: [
-        { value: "Yes", label: "Yes" },
-        { value: "No", label: "No" },
-      ],
-    },
-    {
-      id: "q6",
-      text: "6. Do you afraid of the unknown?",
-      options: [
-        { value: "Yes", label: "Yes" },
-        { value: "No", label: "No" },
-      ],
-    },
-    {
-      id: "q7",
-      text: "7. Do you have hypertension?",
-      options: [
-        { value: "Yes", label: "Yes" },
-        { value: "No", label: "No" },
-      ],
-    },
-    {
-      id: "q8",
-      text: "8. Do you have fear of accumulation of dirt?",
-      options: [
-        { value: "Yes", label: "Yes" },
-        { value: "No", label: "No" },
-      ],
-    },
-    {
-      id: "q9",
-      text: "9. Do you often shut the doors continuosly?",
-      options: [
-        { value: "Yes", label: "Yes" },
-        { value: "No", label: "No" },
-      ],
-    },
-    {
-      id: "q10",
-      text: "10. Do you frequent in making decisions?",
-      options: [
-        { value: "Yes", label: "Yes" },
-        { value: "No", label: "No" },
-      ],
-    },
-    {
-      id: "q11",
-      text: "11. Do you often quiestioning and inspire ideas?",
-      options: [
-        { value: "Yes", label: "Yes" },
-        { value: "No", label: "No" },
-      ],
-    },
-    {
-      id: "q12",
-      text: "12. Do you bathing more than ten times?",
-      options: [
-        { value: "Yes", label: "Yes" },
-        { value: "No", label: "No" },
-      ],
-    },
-    {
-      id: "q13",
-      text: "13. Do you often repeat washing hands?",
-      options: [
-        { value: "Yes", label: "Yes" },
-        { value: "No", label: "No" },
-      ],
-    },
-    {
-      id: "q14",
-      text: "14. Do you always absence on your consciousness?",
-      options: [
-        { value: "Yes", label: "Yes" },
-        { value: "No", label: "No" },
-      ],
-    },
-    {
-      id: "q15",
-      text: "15. Do you have temporary loss of memory?",
-      options: [
-        { value: "Yes", label: "Yes" },
-        { value: "No", label: "No" },
-      ],
-    },
-    {
-      id: "q16",
-      text: "16. Do you have any misaslignment of limbs?",
-      options: [
-        { value: "Yes", label: "Yes" },
-        { value: "No", label: "No" },
-      ],
-    },
-    {
-      id: "q17",
-      text: "17. Do you have any feeling of hatred?",
-      options: [
-        { value: "Yes", label: "Yes" },
-        { value: "No", label: "No" },
-      ],
-    },
-    {
-      id: "q18",
-      text: "18. Do you have proper food balance?",
-      options: [
-        { value: "Yes", label: "Yes" },
-        { value: "No", label: "No" },
-      ],
-    },
-    {
-      id: "q19",
-      text: "19. Do you often losing hope?",
-      options: [
-        { value: "Yes", label: "Yes" },
-        { value: "No", label: "No" },
-      ],
-    },
-    {
-      id: "q20",
-      text: "20. Do you have inactivity of the body?",
-      options: [
-        { value: "Yes", label: "Yes" },
-        { value: "No", label: "No" },
-      ],
-    },
-    {
-      id: "q21",
-      text: "21. Do you have any life pressures?",
+      text: "5. Do you always have dinner?",
       options: [
         { value: "Yes", label: "Yes" },
         { value: "No", label: "No" },
@@ -193,6 +70,10 @@ export default function Service() {
 
   return (
     <>
+     <div   style={{
+      backgroundImage: "linear-gradient(lightblue,lightgreen)",
+      color: "darkred",
+    }}>
       <Container>
         <h1 className="mb-4 text-3xl font-bold text-gray-800">
           Choose the Answer
@@ -222,8 +103,31 @@ export default function Service() {
               ))}
             </div>
           </div>
+          
         ))}
       </Container>
+
+      <div class="flex items-center justify-center">
+  <div class="m-3">
+    <button class="bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">
+      <span class="mr-2">Submit Form</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="currentcolor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+      </svg>
+    </button>
+  </div>
+  
+  <div class="m-3">
+    <button class="bg-white text-gray-800 font-bold rounded border-b-2 border-yellow-500 hover:border-yellow-600 hover:bg-yellow-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">
+      <span class="mr-2">Clear All</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="currentcolor" d="M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6zm10 14.5V20H8v-3.5l4-4 4 4zm-4-5l-4-4V4h8v3.5l-4 4z"></path>
+      </svg>
+    </button>
+  </div>
+ </div>
+
+      </div>
     </>
   );
 }
