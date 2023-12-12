@@ -6,6 +6,7 @@ import {
   exerciseTimeRules,
   recommendedCaloriesRules,
 } from "../../data/knowledgebase";
+
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
