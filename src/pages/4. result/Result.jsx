@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import { Card } from "flowbite-react";
 import Container from "../../components/container/Container";
 import {
   bmiCategoryRules,
@@ -115,10 +116,22 @@ function Result() {
   return (
     <div>
       <Container>
-        <h3>Result:</h3>
-        <p>BMI Category: {bmiCategory}</p>
-        <p>Exercise Time: {exerciseTime}</p>
-        <p>Recommended Calories: {recommendedCalories}</p>
+        <div className="bg-gray-100">
+          <div className=" py-10 mx-8 lg:mx-52">
+            <Card className="px-10">
+              <h1 className="mb-4 text-3xl font-bold text-gray-800">RESULT:</h1>
+              <p className="mb-4 text-lg font-medium text-gray-800">
+                BMI Category: {bmiCategory}
+              </p>
+              <p className="mb-4 text-lg font-medium text-gray-800">
+                Exercise Time: {exerciseTime}
+              </p>
+              <p className="mb-4 text-lg font-medium text-gray-800">
+                Recommended Calories: {recommendedCalories}
+              </p>
+            </Card>
+          </div>
+        </div>
       </Container>
     </div>
   );
