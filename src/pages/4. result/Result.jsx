@@ -5,7 +5,7 @@ import {
   bmiCategoryRules,
   exerciseTimeRules,
   recommendedCaloriesRules,
-} from "../../data/knowledgebase";
+} from "../../data/Knowledgebase";
 
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
