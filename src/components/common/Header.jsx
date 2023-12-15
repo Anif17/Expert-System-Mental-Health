@@ -9,7 +9,7 @@ import { Dialog } from "@headlessui/react";
 
 const navigation = [
   { name: "Home", component: "/", current: false },
-  { name: "Services", component: "/services", current: false },
+  { name: "Services", component: "/questionform", current: false },
   { name: "Portfolio", component: "/portfolio", current: false },
   { name: "Contact", component: "/contact", current: false },
 ];
