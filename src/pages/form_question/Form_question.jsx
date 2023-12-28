@@ -253,6 +253,7 @@ export default function QuestionForm() {
                 <button
                   className="bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center lg:px-36"
                   onClick={() => {
+                    window.scrollTo(0, 0);
                     navigate("/result", {
                       state: { selectedOptions },
                     });
