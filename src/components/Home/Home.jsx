@@ -1,4 +1,4 @@
-import Container from "../../components/container/Container";
+import Container from "../container/Container";
 // import Typed from "react-typed";
 import heroImageMobile from "../../assets/heroImageMobile.jpg";
 import heroImageDesktop from "../../assets/heroImageDesktop.jpg";
