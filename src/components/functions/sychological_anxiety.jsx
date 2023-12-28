@@ -1,25 +1,27 @@
 function checkAnxiety(answers) {
+  var status = "";
   if (
     answers.feeling_fatigue &&
     answers.muscle_tension &&
     answers.hyperhidrosis
   ) {
-    return "Confirm_anxiety";
+    status = "Confirm_anxiety";
   } else if (answers.feeling_fatigue && answers.muscle_tension) {
-    return "half_anxiety";
+    status = "half_anxiety";
   } else if (answers.feeling_fatigue && answers.hyperhidrosis) {
-    return "half_anxiety";
+    status = "half_anxiety";
   } else if (answers.muscle_tension && answers.hyperhidrosis) {
-    return "half_anxiety";
+    status = "half_anxiety";
   } else if (
     !answers.feeling_fatigue &&
     !answers.muscle_tension &&
     !answers.hyperhidrosis
   ) {
-    return "no_Confirm_anxiety";
+    status = "no_Confirm_anxiety";
   } else {
-    return "no_Confirm_anxiety";
+    status = "no_Confirm_anxiety";
   }
+  return status;
 }
 
 export default checkAnxiety;

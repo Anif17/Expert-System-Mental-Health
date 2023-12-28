@@ -212,8 +212,8 @@ export default function QuestionForm() {
 
   return (
     <>
-      <Container>
-        <div className="bg-gray-100">
+      <div className="bg-gray-100">
+        <Container>
           <div className=" py-10 mx-8 lg:mx-52">
             <h1 className="mb-4 text-3xl font-bold text-gray-800">
               Choose the Answer
@@ -253,7 +253,7 @@ export default function QuestionForm() {
                 <button
                   className="bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center lg:px-36"
                   onClick={() => {
-                    navigate("/expertSystem", {
+                    navigate("/result", {
                       state: { selectedOptions },
                     });
                   }}
@@ -274,8 +274,8 @@ export default function QuestionForm() {
               </div>
             </div>
           </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </>
   );
 }

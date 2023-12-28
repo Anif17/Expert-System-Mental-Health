@@ -9,9 +9,9 @@ import { Dialog } from "@headlessui/react";
 
 const navigation = [
   { name: "Home", component: "/", current: false },
-  { name: "Services", component: "/questionform", current: false },
-  { name: "Portfolio", component: "/portfolio", current: false },
-  { name: "Contact", component: "/contact", current: false },
+  { name: "Diagnosis", component: "/check", current: false },
+  // { name: "Portfolio", component: "/portfolio", current: false },
+  // { name: "Contact", component: "/contact", current: false },
 ];
 
 function classNames(...classes) {
@@ -28,7 +28,7 @@ export default function Header() {
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
+            <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
                 className="h-8 w-auto"
