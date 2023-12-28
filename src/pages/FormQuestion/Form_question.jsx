@@ -212,71 +212,67 @@ export default function QuestionForm() {
 
   return (
     <>
-      <div className="bg-gray-100">
-        <Container>
-          <div className=" py-10 mx-8 lg:mx-52">
-            <h1 className="mb-4 text-3xl font-bold text-gray-800">
-              Choose the Answer
-            </h1>
-            {questions.map((question) => (
-              <Card key={question.id} className="my-10">
-                <div className="mb-6">
-                  <p className="mb-4 text-lg font-medium text-gray-800">
-                    {question.text}
-                  </p>
-                  <div className="flex flex-col">
-                    {question.options.map((option) => (
-                      <label
-                        key={option.value}
-                        className="inline-flex items-center mb-2"
-                      >
-                        <input
-                          type="radio"
-                          className="form-radio h-5 w-5 text-blue-600"
-                          value={option.value}
-                          checked={
-                            selectedOptions[question.id] === option.value
-                          }
-                          onChange={() =>
-                            handleOptionChange(question.id, option.value)
-                          }
-                        />
-                        <span className="ml-2">{option.label}</span>
-                      </label>
-                    ))}
-                  </div>
+      <Container>
+        <div className=" py-10 mx-8 lg:mx-52">
+          <h1 className="mb-4 text-3xl font-bold text-gray-800">
+            Choose the Answer
+          </h1>
+          {questions.map((question) => (
+            <Card key={question.id} className="my-10">
+              <div className="mb-6">
+                <p className="mb-4 text-lg font-medium text-gray-800">
+                  {question.text}
+                </p>
+                <div className="flex flex-col">
+                  {question.options.map((option) => (
+                    <label
+                      key={option.value}
+                      className="inline-flex items-center mb-2"
+                    >
+                      <input
+                        type="radio"
+                        className="form-radio h-5 w-5 text-blue-600"
+                        value={option.value}
+                        checked={selectedOptions[question.id] === option.value}
+                        onChange={() =>
+                          handleOptionChange(question.id, option.value)
+                        }
+                      />
+                      <span className="ml-2">{option.label}</span>
+                    </label>
+                  ))}
                 </div>
-              </Card>
-            ))}
-            <div className="flex items-center justify-center">
-              <div className="m-3">
-                <button
-                  className="bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center lg:px-36"
-                  onClick={() => {
-                    window.scrollTo(0, 0);
-                    navigate("/result", {
-                      state: { selectedOptions },
-                    });
-                  }}
-                >
-                  <span className="mr-2">Submit Form</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      fill="currentcolor"
-                      d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
-                    ></path>
-                  </svg>
-                </button>
               </div>
+            </Card>
+          ))}
+          <div className="flex items-center justify-center">
+            <div className="m-3">
+              <button
+                className="bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center lg:px-36"
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                  navigate("/result", {
+                    state: { selectedOptions },
+                  });
+                }}
+              >
+                <span className="mr-2">Submit Form</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentcolor"
+                    d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
+                  ></path>
+                </svg>
+              </button>
             </div>
           </div>
-        </Container>
-      </div>
+        </div>
+      </Container>
     </>
   );
 }

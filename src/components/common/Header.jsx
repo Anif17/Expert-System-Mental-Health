@@ -10,8 +10,8 @@ import { Dialog } from "@headlessui/react";
 const navigation = [
   { name: "Home", component: "/", current: false },
   { name: "Diagnosis", component: "/check", current: false },
-  // { name: "Portfolio", component: "/portfolio", current: false },
   // { name: "Contact", component: "/contact", current: false },
+  { name: "Team", component: "/team", current: false },
 ];
 
 function classNames(...classes) {
