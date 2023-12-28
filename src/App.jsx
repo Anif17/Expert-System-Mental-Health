@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
+import Home from "./pages/home/Home";
 import Navbar from "./components/common/Header";
-import Home from "./pages/Home/Home";
 import Footer from "./components/common/Footer";
-import ExpertSystem from "./pages/ExpertSystem/ExpertSystem";
-import QuestionForm from "./pages/FormQuestion/Form_question";
-import Team from "./pages/Team/Team";
+import ExpertSystem from "./pages/expertSystem/ExpertSystem";
+import QuestionForm from "./pages/formQuestion/Form_question";
+import Team from "./pages/team/Team";
 
 function App() {
   return (
