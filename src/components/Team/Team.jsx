@@ -1,5 +1,5 @@
 import Container from "../container/Container";
-import Anif from "../../assets/me.jpg";
+import Anif from "../../assets/Anif.jpg";
 import Aqil from "../../assets/aqil.png";
 import Airul from "../../assets/airul.png";
 import Fayyadh from "../../assets/fayyadh.png";
