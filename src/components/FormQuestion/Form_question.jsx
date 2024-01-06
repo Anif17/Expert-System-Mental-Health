@@ -2,193 +2,328 @@ import { useState } from "react";
 import Container from "../../components/container/Container";
 import { useNavigate } from "react-router-dom";
 import { Card } from "flowbite-react";
+import { Modal } from "flowbite-react";
+import { HiOutlineExclamationCircle } from "react-icons/hi";
 
 export default function QuestionForm() {
   const navigate = useNavigate();
+  const [openModal, setOpenModal] = useState(false);
+  const [data, setData] = useState();
 
   const questions = [
-    {
-      id: "feeling_fatigue",
-      text: "1. Feeling fatigue ?",
-      options: [
-        { value: true, label: "True" },
-        { value: false, label: "False" },
-      ],
-    },
-    {
-      id: "muscle_tension",
-      text: "2. Feeling muscle tension ?",
-      options: [
-        { value: true, label: "True" },
-        { value: false, label: "False" },
-      ],
-    },
-    {
-      id: "hyperhidrosis",
-      text: "3. Hyperhidrosis (excessive sweating) ?",
-      options: [
-        { value: true, label: "True" },
-        { value: false, label: "False" },
-      ],
-    },
+    // {
+    //   id: "feeling_fatigue",
+    //   text: "1. Do you feel any fatigue ?",
+    //   options: [
+    //     { value: "severe", label: "Overwhelming and persistent tiredness" },
+    //     {
+    //       value: "moderate",
+    //       label: "Feeling noticeably tired or drained of energy",
+    //     },
+    //     { value: "mild", label: "Feeling slightly tired or weary" },
+    //   ],
+    // },
+    // {
+    //   id: "muscle_tension",
+    //   text: "2. How is your experience with muscle tension ?",
+    //   options: [
+    //     {
+    //       value: "severe",
+    //       label: "Intense tightness, pain, or discomfort in muscles",
+    //     },
+    //     {
+    //       value: "moderate",
+    //       label: "Noticeable tightness or discomfort in muscles",
+    //     },
+    //     {
+    //       value: "mild",
+    //       label:
+    //         "Sensation of tightness or slight discomfort in specific muscles",
+    //     },
+    //   ],
+    // },
+    // {
+    //   id: "hyperhidrosis",
+    //   text: "3. What is sweating condition ?",
+    //   options: [
+    //     {
+    //       value: "severe",
+    //       label: "Sweating excessively and it interfere my quality of life",
+    //     },
+    //     {
+    //       value: "moderate",
+    //       label: "Sweating is noticeable and have an impact on daily life",
+    //     },
+    //     {
+    //       value: "mild",
+    //       label: "Sweating is notieable but does not impact on daily life",
+    //     },
+    //   ],
+    // },
     {
       id: "confusion",
-      text: "4. Feeling confusion ?",
+      text: "1. Do you feel confused ?",
       options: [
-        { value: true, label: "True" },
-        { value: false, label: "False" },
+        {
+          value: "severe",
+          label:
+            "Significant cognitive impairment with ongoing difficulty processing information",
+        },
+        {
+          value: "moderate",
+          label: "Noticeable difficulty concentrating or maintaining focus",
+        },
+        {
+          value: "mild",
+          label:
+            "Occasional lapses in concentration or brief moments of disorientation",
+        },
       ],
     },
     {
       id: "insomnia",
-      text: "5. Insomnia and difficulty sleeping ?",
+      text: "2. Do you have any difficulty in sleeping ?",
       options: [
-        { value: true, label: "True" },
-        { value: false, label: "False" },
+        {
+          value: "severe",
+          label:
+            "Severe difficulty falling asleep or staying asleep, often occurring nightly.",
+        },
+        {
+          value: "moderate",
+          label:
+            "Regular difficulty falling asleep or staying asleep, occurring several times a week",
+        },
+        {
+          value: "mild",
+          label: "Occasional difficulty falling asleep or staying asleep",
+        },
       ],
     },
-    {
-      id: "abdominal_pain",
-      text: "6. Feeling abdominal pain ?",
-      options: [
-        { value: true, label: "True" },
-        { value: false, label: "False" },
-      ],
-    },
+    // {
+    //   id: "abdominal_pain",
+    //   text: "6. How do you feel when having abdominal pain ?",
+    //   options: [
+    //     { value: "severe", label: "Intense, sharp, or cramping pain" },
+    //     {
+    //       value: "moderate",
+    //       label:
+    //         "Noticeable discomfort or pain that may affect daily activities",
+    //     },
+    //     {
+    //       value: "mild",
+    //       label: "Minor discomfort or twinges in the abdominal area",
+    //     },
+    //   ],
+    // },
     {
       id: "nervousness",
-      text: "7. Feeling Nervousness or stress ?",
+      text: "3. Feeling Nervousness  ?",
       options: [
-        { value: true, label: "True" },
-        { value: false, label: "False" },
+        {
+          value: "severe",
+          label: "Intense feelings of anxiety, apprehension, or nervousness",
+        },
+        {
+          value: "moderate",
+          label: "Noticeable feelings of anxiety or nervousness",
+        },
+        { value: "mild", label: "A slight sense of unease or anticipation" },
       ],
     },
     {
       id: "fear_of_being_stolen",
-      text: "8. Fear of being stolen pr polluted",
+      text: "4. Do you feel like you are going to be abducted ?",
       options: [
-        { value: true, label: "True" },
-        { value: false, label: "False" },
+        { value: true, label: "Yes" },
+        { value: false, label: "No" },
       ],
     },
     {
       id: "fear_of_causing_harm",
-      text: "9. Fear of causing harm to others ?",
+      text: "5. Do you fear that you will cause harm to others ?",
       options: [
-        { value: true, label: "True" },
-        { value: false, label: "False" },
+        {
+          value: "severe",
+          label: "Intense and persistent fear of causing harm to others",
+        },
+        {
+          value: "moderate",
+          label: "Increased frequency of thoughts about causing harm",
+        },
+        {
+          value: "mild",
+          label: "Occasional, fleeting thoughts of causing harm to others",
+        },
       ],
     },
     {
       id: "fear_of_mistakes",
-      text: "10. Fear of causing mistakes ?",
+      text: "6. What is your thought on making mistakes ?",
       options: [
-        { value: true, label: "True" },
-        { value: false, label: "False" },
+        {
+          value: "severe",
+          label: "Intense and persistent fear of making mistakes",
+        },
+        {
+          value: "moderate",
+          label:
+            "Increased frequency of worry or fear regarding making mistakes",
+        },
+        {
+          value: "mild",
+          label: "Occasional worries or concerns about making mistakes",
+        },
       ],
     },
-    {
-      id: "excessive_need_for_organization",
-      text: "11. Any excessive need for organization, integration and accuracy ?",
-      options: [
-        { value: true, label: "True" },
-        { value: false, label: "False" },
-      ],
-    },
-    {
-      id: "showers_more_than_once",
-      text: "12. Do showers more than once ?",
-      options: [
-        { value: true, label: "True" },
-        { value: false, label: "False" },
-      ],
-    },
-    {
-      id: "hand_washing_frequentlly",
-      text: "13. Hand washing frequentlly ?",
-      options: [
-        { value: true, label: "True" },
-        { value: false, label: "False" },
-      ],
-    },
-    {
-      id: "eating_certain_fixed_of_food",
-      text: "14. Eating a certain fixed of food ?",
-      options: [
-        { value: true, label: "True" },
-        { value: false, label: "False" },
-      ],
-    },
+    // {
+    //   id: "excessive_need_for_organization",
+    //   text: "11. How do you feel when seeing cluters ?",
+    //   options: [
+    //     { value: "severe", label: "Intense feeling of the need to organize" },
+    //     {
+    //       value: "moderate",
+    //       label: "Moderate feeling of the need to organize",
+    //     },
+    //     {
+    //       value: "mild",
+    //       label:
+    //         "Occasional feeling of the need to organize, but not overwhelming",
+    //     },
+    //   ],
+    // },
+    // {
+    //   id: "showers_more_than_once",
+    //   text: "12. How many time do you showers a day ?",
+    //   options: [
+    //     { value: "severe", label: "More" },
+    //     { value: "moderate", label: "4 - 5" },
+    //     { value: "mild", label: "1 - 3" },
+    //   ],
+    // },
+    // {
+    //   id: "hand_washing_frequentlly",
+    //   text: "13. Hand washing frequentlly ?",
+    //   options: [
+    //     { value: "severe", label: "More than normal" },
+    //     {
+    //       value: "moderate",
+    //       label: "I wash hand normally (before/after eating, using toilet...",
+    //     },
+    //   ],
+    // },
+    // {
+    //   id: "eating_certain_fixed_of_food",
+    //   text: "14. Eating a certain fixed of food ?",
+    //   options: [
+    //     {
+    //       value: "severe",
+    //       label:
+    //         "Significant cognitive impairment with ongoing difficulty processing information",
+    //     },
+    //     {
+    //       value: "moderate",
+    //       label: "Noticeable difficulty concentrating or maintaining focus",
+    //     },
+    //     {
+    //       value: "mild",
+    //       label:
+    //         "Occasional lapses in concentration or brief moments of disorientation",
+    //     },
+    //   ],
+    // },
     {
       id: "total_separation_from_reality",
-      text: "15. Have total separtaion from reality ?",
+      text: "7. Have total separtaion from reality ?",
       options: [
-        { value: true, label: "True" },
-        { value: false, label: "False" },
+        { value: "severe", label: "It has been a normal occurance" },
+        { value: "moderate", label: "It happen sometime" },
+        { value: "mild", label: "It happen rarely" },
       ],
     },
     {
       id: "temporary_loss_of_memory",
-      text: "16. Have temporary loss of memory ?",
+      text: "8. Have temporary loss of memory ?",
       options: [
-        { value: true, label: "True" },
-        { value: false, label: "False" },
+        { value: "severe", label: "It has been a normal occurance" },
+        { value: "moderate", label: "It happen sometime" },
+        { value: "mild", label: "It happen rarely" },
       ],
     },
     {
       id: "absence_from_consciousness",
-      text: "17. Absence from conciousness ?",
+      text: "9. Absence from conciousness ?",
       options: [
-        { value: true, label: "True" },
-        { value: false, label: "False" },
+        { value: "severe", label: "It has been a normal occurance" },
+        { value: "moderate", label: "It happen sometime" },
+        { value: "mild", label: "It happen rarely" },
       ],
     },
-    {
-      id: "feeling_of_hatred",
-      text: "18. Have feeling of hatred toward a certain person ?",
-      options: [
-        { value: true, label: "True" },
-        { value: false, label: "False" },
-      ],
-    },
-    {
-      id: "sleep_and_food_disruption",
-      text: "19. Have sleep and food disruption ?",
-      options: [
-        { value: true, label: "True" },
-        { value: false, label: "False" },
-      ],
-    },
-    {
-      id: "inactivity_in_the_movement_of_the_body",
-      text: "20. Inactivity in the movement of the body ?",
-      options: [
-        { value: true, label: "True" },
-        { value: false, label: "False" },
-      ],
-    },
+    // {
+    //   id: "feeling_of_hatred",
+    //   text: "18. Have feeling of hatred toward a certain person ?",
+    //   options: [
+    //     {
+    //       value: "psycosocial_dynamics",
+    //       label: "Psycosocial Dynamics and Interpersoanl Relationships",
+    //     },
+    //     {
+    //       value: "unresolved_conflict",
+    //       label: "Unresolved Conflict and Comminication Breakdown",
+    //     },
+    //     {
+    //       value: "emotional",
+    //       label: "Emotional well-being and Self-Reflection",
+    //     },
+    //     {
+    //       value: "safety_concerns",
+    //       label: "Safety Concerns and Legal Implications",
+    //     },
+    //   ],
+    // },
+    // {
+    //   id: "sleep_and_food_disruption",
+    //   text: "19. Do you have sleep and food disruption ?",
+    //   options: [
+    //     { value: true, label: "Yes" },
+    //     { value: false, label: "No" },
+    //   ],
+    // },
+    // {
+    //   id: "inactivity_in_the_movement_of_the_body",
+    //   text: "20. Do you some problem with moving some body parts ?",
+    //   options: [
+    //     { value: true, label: "Yes" },
+    //     { value: false, label: "No" },
+    //   ],
+    // },
     {
       id: "fear_and_inner_horror",
-      text: "21. have any fear and inner horror ?",
+      text: "10. Do you have any fear and inner horror ?",
       options: [
-        { value: true, label: "True" },
-        { value: false, label: "False" },
+        { value: true, label: "Yes" },
+        { value: false, label: "No" },
       ],
     },
     {
       id: "frustation_and_loss_hope",
-      text: "22. Have constant sense of frustation and loss of hope ?",
+      text: "11. What do you think of your current self ?",
       options: [
-        { value: true, label: "True" },
-        { value: false, label: "False" },
+        { value: "severe", label: "Frustrated, despair and hopeless" },
+        { value: "moderate", label: "I frequently feel despair" },
+        { value: "mild", label: "Sometime I feel discouraged" },
       ],
     },
     {
       id: "lose_enjoyment_life",
-      text: "23. Feel loss of enjoyment of life and lack of decision-making ?",
+      text: "12. Did you not enjoy your life ?",
       options: [
-        { value: true, label: "True" },
-        { value: false, label: "False" },
+        { value: "severe", label: "Yes, there is no enjoyment in life" },
+        {
+          value: "moderate",
+          label: "I find it very difficult to find enjoyment in any activity",
+        },
+        { value: "mild", label: "It is hard to enjoy life occasionally" },
       ],
     },
   ];
@@ -196,7 +331,7 @@ export default function QuestionForm() {
   const [selectedOptions, setSelectedOptions] = useState(() => {
     const initialState = {};
     questions.forEach((question) => {
-      initialState[question.id] = false;
+      initialState[question.id] = null;
     });
     return initialState;
   });
@@ -250,10 +385,22 @@ export default function QuestionForm() {
               <button
                 className="bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center lg:px-36"
                 onClick={() => {
-                  window.scrollTo(0, 0);
-                  navigate("/result", {
-                    state: { selectedOptions },
-                  });
+                  // Check if any question is unanswered
+                  const unansweredQuestions = Object.keys(
+                    selectedOptions
+                  ).filter(
+                    (questionId) => selectedOptions[questionId] === null
+                  );
+
+                  if (unansweredQuestions.length > 0) {
+                    setOpenModal(true);
+                    setData(unansweredQuestions);
+                  } else {
+                    window.scrollTo(0, 0);
+                    navigate("/result", {
+                      state: { selectedOptions },
+                    });
+                  }
                 }}
               >
                 <span className="mr-2">Submit Form</span>
@@ -272,6 +419,30 @@ export default function QuestionForm() {
             </div>
           </div>
         </div>
+        ``
+        <Modal
+          show={openModal}
+          size="md"
+          onClose={() => setOpenModal(false)}
+          popup
+        >
+          <Modal.Header />
+          <Modal.Body>
+            <div className="text-center">
+              <HiOutlineExclamationCircle className="mx-auto mb-4 h-14 w-14 text-gray-400 dark:text-gray-200" />
+              <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
+                {data?.length ?? 0} question(s) are unanswered. Please answer
+                all questions before submitting the form.
+              </h3>
+              {/* <div className="flex justify-center gap-4">
+                <Button color="gray" onClick={() => setOpenModal(false)}>
+                  No, cancel
+                </Button>
+              </div> */}
+            </div>
+          </Modal.Body>
+        </Modal>
+        ;
       </Container>
     </>
   );

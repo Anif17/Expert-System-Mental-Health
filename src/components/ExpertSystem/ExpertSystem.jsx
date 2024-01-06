@@ -169,9 +169,9 @@ const ExpertSystem = () => {
                     }
                   })()}
                 </span>
-              </Card>
+                {/* </Card> */}
 
-              <Card className="sm:mx-20 mx-10 my-10">
+                {/* <Card className="sm:mx-20 mx-10 my-10"> */}
                 <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
                   Obsessive Compulsive Disorder (OCD) Assessment Results
                 </h5>
@@ -212,9 +212,9 @@ const ExpertSystem = () => {
                     }
                   })()}
                 </span>
-              </Card>
+                {/* </Card> */}
 
-              <Card className="sm:mx-20 mx-10 my-10">
+                {/* <Card className="sm:mx-20 mx-10 my-10"> */}
                 <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
                   Hysteria Assessment Results
                 </h5>
@@ -255,9 +255,9 @@ const ExpertSystem = () => {
                     }
                   })()}
                 </span>
-              </Card>
+                {/* </Card> */}
 
-              <Card className="sm:mx-20 mx-10 my-10">
+                {/* <Card className="sm:mx-20 mx-10 my-10"> */}
                 <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
                   Depression Assessment Results
                 </h5>
