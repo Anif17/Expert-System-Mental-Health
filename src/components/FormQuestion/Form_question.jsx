@@ -133,7 +133,7 @@ export default function QuestionForm() {
     },
     {
       id: "fear_of_being_stolen",
-      text: "4. Do you feel like you are going to be abducted ?",
+      text: "4. Do you feel like you are going to be item stolen ?",
       options: [
         { value: true, label: "Yes" },
         { value: false, label: "No" },
